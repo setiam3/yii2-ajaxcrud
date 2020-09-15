@@ -17,8 +17,8 @@
 		}
 	],
     "support": {
-        "issues": "https://github.com/johnitvn/yii2-ajaxcrud/issues?state=open",
-        "source": "https://github.com/johnitvn/yii2-ajaxcrud"
+        "issues": "https://github.com/setiam3/yii2-ajaxcrud/issues?state=open",
+        "source": "https://github.com/setiam3/yii2-ajaxcrud"
     },
     "require": {
         "yiisoft/yii2": "*",

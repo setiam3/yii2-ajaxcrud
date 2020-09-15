@@ -1,6 +1,6 @@
 {
-    "name": "johnitvn/yii2-ajaxcrud",
-    "description": "Gii CRUD template for Single Page Ajax Administration for yii2",
+    "name": "setiam3/yii2-ajaxcrud",
+    "description": "Gii CRUD template for Single Page Ajax Administration for yii2 extend from jhonitvn",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","ajax","crud","gii","template","database"],
     "license": "Apache-2.0",
@@ -11,6 +11,11 @@
             "homepage": "https://github.com/johnitvn?tab=repositories"
         }
     ],
+	"contributor":[
+		{
+			"name":"setiam3"
+		}
+	],
     "support": {
         "issues": "https://github.com/johnitvn/yii2-ajaxcrud/issues?state=open",
         "source": "https://github.com/johnitvn/yii2-ajaxcrud"
@@ -25,10 +30,10 @@
     },
     "autoload": {
         "psr-4": {
-            "johnitvn\\ajaxcrud\\": "src/"
+            "setiam3\\ajaxcrud\\": "src/"
         }
     },
     "extra": {
-        "bootstrap": "johnitvn\\ajaxcrud\\Bootstrap"
+        "bootstrap": "setiam3\\ajaxcrud\\Bootstrap"
     }
 }

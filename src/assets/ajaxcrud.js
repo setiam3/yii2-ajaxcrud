@@ -9,16 +9,20 @@ $(document).ready(function () {
     // Create instance of Modal Remote
     // This instance will be the controller of all business logic of modal
     // Backwards compatible lookup of old ajaxCrubModal ID
-    if ($('#ajaxCrubModal').length > 0 && $('#ajaxCrudModal').length == 0) {
-        modal = new ModalRemote('#ajaxCrubModal');
-    } else {
-        modal = new ModalRemote('#ajaxCrudModal');
-    }
+//     if ($('#ajaxCrubModal').length > 0 && $('#ajaxCrudModal').length == 0) {
+//         modal = new ModalRemote('#ajaxCrubModal');
+//     } else {
+//         modal = new ModalRemote('#ajaxCrudModal');
+//     }
+    let idmodal =
+    "#" + $("a[data-target]").closest(".content").find("div.modal").attr("id");
+  modal = new ModalRemote(idmodal);
 
     // Catch click event on all buttons that want to open a modal
     $(document).on('click', '[role="modal-remote"]', function (event) {
         event.preventDefault();
-
+    idmodal = $(this).attr("data-target");
+    modal = new ModalRemote(idmodal);
         // Open modal
         modal.open(this, null);
     });
@@ -27,19 +31,13 @@ $(document).ready(function () {
     // with bulk action
     $(document).on('click', '[role="modal-remote-bulk"]', function (event) {
         event.preventDefault();
+        idmodal = $(this).attr("data-target");
+        modal = new ModalRemote(idmodal);
 
         // Collect all selected ID's
         var selectedIds = [];
-        
-        // See if we have a selector set
-        var selection = 'selection';
-        if ($(this).data("selector") != null) {
-        	selection = $(this).data("selector");
-        }
-        
-        $('input:checkbox[name="' + selection + '[]"]').each(function () {
-            if (this.checked)
-                selectedIds.push($(this).val());
+        $('input:checkbox[name="selection[]"]').each(function () {
+          if (this.checked) selectedIds.push($(this).val());
         });
 
         if (selectedIds.length == 0) {
